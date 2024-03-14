@@ -1,0 +1,34 @@
+<resources>
+    <string-array name="combined_currencies">
+        <item>Rs. - Default</item>
+        <item>A$ - Australian Dollar (AUD)</item>
+        <item>R$ - Brazilian Real (BRL)</item>
+        <item>£ - British Pound Sterling (GBP)</item>
+        <item>CA$ - Canadian Dollar (CAD)</item>
+        <item>¥ - Chinese Renminbi (CNY)</item>
+        <item>kr - Danish Krone (DKK)</item>
+        <item>€ - Euro (EUR)</item>
+        <item>HK$ - Hong Kong Dollar (HKD)</item>
+        <item>₹ - Indian Rupee (INR)</item>
+        <item>Rp - Indonesian Rupiah (IDR)</item>
+        <item>¥ - Japanese Yen (JPY)</item>
+        <item>₩ - Korean Won (KRW)</item>
+        <item>RM - Malaysian Ringgit (MYR)</item>
+        <item>Mex$ - Mexican Peso (MXN)</item>
+        <item>रू - Nepalese Rupee (NPR)</item>
+        <item>NZ$ - New Zealand Dollar (NZD)</item>
+        <item>kr - Norwegian Krone (NOK)</item>
+        <item>₱ - Philippine Peso (PHP)</item>
+        <item>₽ - Russian Ruble (RUB)</item>
+        <item>SR - Saudi Riyal (SAR)</item>
+        <item>SGD - Singapore Dollar (SGD)</item>
+        <item>R - South African Rand (ZAR)</item>
+        <item>kr - Swedish Krona (SEK)</item>
+        <item>CHF - Swiss Franc (CHF)</item>
+        <item>฿ - Thai Baht (THB)</item>
+        <item>₺ - Turkish Lira (TRY)</item>
+        <item>AED - United Arab Emirates Dirham (AED)</item>
+        <item>$ - United States Dollar (USD)</item>
+        <item>₫ - Vietnamese Dong (VND)</item>
+    </string-array>
+</resources>

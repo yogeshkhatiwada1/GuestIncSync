@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Title -->
+
+    <LinearLayout
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/baseline_settings_24"
+            android:drawablePadding="8dp"
+            android:text="Settings"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:drawableTint="#757474" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewCloseSetting"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_close_24"
+                app:tint="#757474" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/switchNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:checked="true"
+        android:text="Receive Notifications"
+        android:textColor="#757474"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="My Currency" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextMyCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:hint="Rs."
+            android:inputType="text"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp"
+            android:textAlignment="viewStart"
+            android:textColor="#F57C00"
+            android:textColorHint="#F57C00"
+            android:textSize="14sp"
+            tools:ignore="RtlCompat" />
+
+        <Spinner
+            android:id="@+id/spinnerCurrency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="#F57C00" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="My Currency Format" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupCurrencyFormat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioButtonNumeric_AlphabeticalFormat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="Numeric/Alphabetical Format"
+                android:textColor="#757474" />
+
+            <RadioButton
+                android:id="@+id/radioButtonNumericFormat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="Numeric Format"
+                android:textColor="#757474" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Change Date Format" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupDateFormat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonAD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="AD"
+                android:textColor="#757474" />
+
+            <RadioButton
+                android:id="@+id/radioButtonBS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="BS"
+                android:textColor="#757474" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#FF9800"
+        android:onClick="onSaveSettingsClicked"
+        android:text="Save Setting"
+        android:textColor="#2C2C2C"
+        android:textStyle="bold" />
+
+</LinearLayout>
