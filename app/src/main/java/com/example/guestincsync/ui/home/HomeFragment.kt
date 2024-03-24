@@ -1,9 +1,7 @@
 package com.example.guestincsync.ui.home
 
+import BookedRoomAdapter
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -11,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupWindow
 import android.widget.TabHost
-import android.widget.TabWidget
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -20,7 +17,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.guestincsync.R
 import com.example.guestincsync.databinding.FragmentHomeBinding
-import com.example.guestincsync.ui.adapter.RoomAdapter
+import com.example.guestincsync.ui.adapter.AvailableRoomAdapter
+import com.example.guestincsync.ui.dataModelClass.BookedRoom
 import com.example.guestincsync.ui.dataModelClass.Room
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -29,8 +27,8 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private lateinit var roomAdapter: RoomAdapter
-    
+    private lateinit var availableRoomAdapter: AvailableRoomAdapter
+    private lateinit var bookedRoomAdapter: BookedRoomAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -135,12 +133,14 @@ class HomeFragment : Fragment() {
 
 
         // Initialize RecyclerView with GridLayoutManager
-        val recyclerView: RecyclerView = binding.availableRoomRecyclerView
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        val availableRoomRecyclerView: RecyclerView = binding.availableRoomRecyclerView
 
-        roomAdapter = RoomAdapter(getSampleRoomData())
-        recyclerView.adapter = roomAdapter
+        val bookedRoomRecyclerView: RecyclerView = binding.bookedRoomRecyclerView
 
+        availableRoomAdapter = AvailableRoomAdapter(getSampleRoomData())
+        availableRoomRecyclerView.adapter = availableRoomAdapter
+        bookedRoomAdapter = BookedRoomAdapter(getSampleBookedRoomData())
+        bookedRoomRecyclerView.adapter = bookedRoomAdapter
 
         return root
     }
@@ -189,4 +189,22 @@ class HomeFragment : Fragment() {
         // Add more rooms as needed
         return roomList
     }
+    private fun getSampleBookedRoomData(): List<BookedRoom> {
+        val bookedRoomList = mutableListOf<BookedRoom>()
+        bookedRoomList.add(BookedRoom("100", "Normal", "1000/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:30 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("101", "Deluxe", "1500/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("10100", "Attached", "4500/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("100", "Normal", "1000/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("101", "Deluxe", "1500/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("10100", "Attached", "4500/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("100", "Normal", "1000/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("101", "Deluxe", "1500/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("10100", "Attached", "4500/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("100", "Normal", "1000/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("101", "Deluxe", "1500/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+        bookedRoomList.add(BookedRoom("10100", "Attached", "4500/hr", "Mr. Example", "Wed-2024, 11:00 AM", "Thu-2024, 12:00 AM", "2.5 hrs"))
+
+        return bookedRoomList
+    }
+
 }

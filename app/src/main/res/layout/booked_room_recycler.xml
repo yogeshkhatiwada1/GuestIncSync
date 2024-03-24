@@ -1,0 +1,399 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- First FrameLayout -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/border_background1"
+        android:backgroundTint="#BAFBC02D">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- First Row -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="5dp">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/roomicon"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="serif-monospace"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="Room Number"
+                    android:textAlignment="viewStart"
+                    android:textColor="#171717"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_weight="1"
+                    android:fontFamily="serif-monospace"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="100"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#171717"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="5dp">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/status"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="serif-monospace"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="Status"
+                    android:textColor="#171717"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_weight="1"
+                    android:fontFamily="serif-monospace"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="Booked"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#171717"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Second Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="5dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/category"
+                        android:drawablePadding="13dp"
+                        android:fontFamily="serif-monospace"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="0dp"
+                        android:text="Room Category"
+                        android:textAlignment="viewStart"
+                        android:textColor="#171717"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_weight="1"
+                    android:fontFamily="serif-monospace"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="Normal"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#171717"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Third Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="5dp">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/money1"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="serif-monospace"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="Price"
+                    android:textAlignment="viewStart"
+                    android:textColor="#171717"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_weight="1"
+                    android:fontFamily="serif-monospace"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="1000/hr"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#171717"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#131313"
+                android:text="Check Out" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                app:srcCompat="@drawable/baseline_keyboard_arrow_down_24"
+                app:tint="#000000" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="2dp"
+                        android:fontFamily="serif-monospace"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="0dp"
+                        android:text="Customer Name"
+                        android:textColor="#171717"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_weight="1"
+                        android:fontFamily="serif-monospace"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="10dp"
+                        android:text="Mr.Example"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#171717"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="2dp"
+                        android:fontFamily="serif-monospace"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="0dp"
+                        android:text="Check In Time"
+                        android:textColor="#171717"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_weight="1"
+                        android:fontFamily="serif-monospace"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="10dp"
+                        android:text="Wed-2024 11 AM "
+                        android:textAlignment="viewEnd"
+                        android:textColor="#171717"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="2dp"
+                        android:fontFamily="serif-monospace"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="0dp"
+                        android:text="Check Out Time"
+                        android:textColor="#171717"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical|end"
+                        android:layout_weight="1"
+                        android:fontFamily="serif-monospace"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="10dp"
+                        android:text="Thu-2024 12 AM "
+                        android:textAlignment="viewEnd"
+                        android:textColor="#171717"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="2dp"
+                        android:fontFamily="serif-monospace"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="0dp"
+                        android:text="Current Stay"
+                        android:textColor="#171717"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_weight="1"
+                        android:fontFamily="serif-monospace"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="10dp"
+                        android:text="2.5 hr"
+                        android:textAlignment="viewEnd"
+                        android:textColor="#171717"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="#131313"
+                    android:text="Check Out"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/baseline_keyboard_arrow_up_24"
+                    app:tint="#000000" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

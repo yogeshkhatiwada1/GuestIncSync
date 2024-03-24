@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.guestincsync.R
 import com.example.guestincsync.ui.dataModelClass.Room
 
-class RoomAdapter(private val roomList: List<Room>) : RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() {
+class AvailableRoomAdapter(private val roomList: List<Room>) : RecyclerView.Adapter<AvailableRoomAdapter.RoomViewHolder>() {
 
     class RoomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Define your views here using itemView.findViewById

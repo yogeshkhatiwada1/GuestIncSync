@@ -1,13 +1,11 @@
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:columnCount="2"
-    android:rowCount="1">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <!-- First FrameLayout -->
     <FrameLayout
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
@@ -36,20 +34,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableLeft="@drawable/roomicon"
-                    android:drawablePadding="2dp"
+                    android:drawablePadding="10dp"
                     android:fontFamily="serif-monospace"
-                    android:paddingStart="2dp"
+                    android:paddingStart="8dp"
                     android:paddingEnd="0dp"
-                    android:text="Room\nNumber"
+                    android:text="Room Number"
                     android:textAlignment="viewStart"
                     android:textColor="#171717"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
                     android:layout_weight="1"
                     android:fontFamily="serif-monospace"
                     android:paddingStart="5dp"
@@ -57,7 +56,46 @@
                     android:text="100"
                     android:textAlignment="viewEnd"
                     android:textColor="#171717"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:paddingStart="0dp"
+                android:paddingEnd="5dp">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/status"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="serif-monospace"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="0dp"
+                    android:text="Status"
+                    android:textColor="#171717"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_weight="1"
+                    android:fontFamily="serif-monospace"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="10dp"
+                    android:text="Available"
+                    android:textAlignment="viewEnd"
+                    android:textColor="#171717"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -78,18 +116,18 @@
 
                     <TextView
                         android:id="@+id/textView13"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableLeft="@drawable/category"
-                        android:drawablePadding="5dp"
+                        android:drawablePadding="13dp"
                         android:fontFamily="serif-monospace"
-                        android:paddingStart="2dp"
+                        android:paddingStart="8dp"
                         android:paddingEnd="0dp"
-                        android:text="Room\nCategory"
+                        android:text="Room Category"
                         android:textAlignment="viewStart"
                         android:textColor="#171717"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -98,15 +136,15 @@
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="0"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_weight="1"
                     android:fontFamily="serif-monospace"
                     android:paddingStart="5dp"
                     android:paddingEnd="10dp"
                     android:text="Normal"
                     android:textAlignment="viewEnd"
                     android:textColor="#171717"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -125,20 +163,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableLeft="@drawable/money1"
-                    android:drawablePadding="2dp"
+                    android:drawablePadding="10dp"
                     android:fontFamily="serif-monospace"
-                    android:paddingStart="2dp"
+                    android:paddingStart="8dp"
                     android:paddingEnd="0dp"
                     android:text="Price"
                     android:textAlignment="viewStart"
                     android:textColor="#171717"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
                     android:layout_weight="1"
                     android:fontFamily="serif-monospace"
                     android:paddingStart="5dp"
@@ -146,25 +185,21 @@
                     android:text="1000/hr"
                     android:textAlignment="viewEnd"
                     android:textColor="#171717"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Fourth Row (Button) -->
             <Button
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
-                android:layout_height="35dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:backgroundTint="#131313"
-                android:text="Check In"
-                android:textSize="10sp" />
+                android:text="Check In" />
         </LinearLayout>
 
     </FrameLayout>
 
-    <!-- Second FrameLayout (Copy and paste the code for additional items) -->
-
-</GridLayout>
+</RelativeLayout>
