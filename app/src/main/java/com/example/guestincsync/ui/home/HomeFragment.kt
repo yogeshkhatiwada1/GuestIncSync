@@ -40,6 +40,7 @@ class HomeFragment : Fragment() {
 
         val currencyDaily:TextView = binding.textViewCurrencyDaily
         val currencyMonthly:TextView = binding.textViewCurrencyMonthly
+
         val sharedPreferences = requireActivity().getSharedPreferences("MySettings", Context.MODE_PRIVATE)
         val myCurrency = sharedPreferences.getString("MyCurrency", "Rs.") ?: ""
         currencyDaily.text=myCurrency
@@ -47,6 +48,47 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner){newCurrency->
             currencyDaily.text = newCurrency
             currencyMonthly.text = newCurrency
+        }
+        val currencyFormatDaily:TextView = binding.textViewDailyIncome
+        val currencyFormatMonthly:TextView = binding.textViewMonthlyIncome
+        val currencyFormatDailyIncomeUp:TextView = binding.textViewDailyIncomeUp
+        val currencyFormatDailyIncomeDown:TextView = binding.textViewDailyIncomeDown
+        val currencyFormatMonthlyIncomeUp:TextView = binding.textViewMonthlyIncomeUp
+        val currencyFormatMonthlyIncomeDown:TextView = binding.textViewMonthlyIncomeDown
+        val currencyFormat = sharedPreferences.getString("CurrencyFormat", "Numeric/Alphabetical Format") ?: ""
+        if(currencyFormat=="Numeric/Alphabetical Format"){
+            currencyFormatDaily.text = "5k"
+            currencyFormatMonthly.text = "10k"
+             currencyFormatDailyIncomeUp.text ="2k"
+             currencyFormatDailyIncomeDown.text ="2k"
+             currencyFormatMonthlyIncomeUp.text ="5k"
+             currencyFormatMonthlyIncomeDown.text ="5k"
+        }
+        else{
+            currencyFormatDaily.text ="5000"
+            currencyFormatMonthly.text = "10000"
+            currencyFormatDailyIncomeUp.text ="2000"
+            currencyFormatDailyIncomeDown.text ="2000"
+            currencyFormatMonthlyIncomeUp.text ="5000"
+            currencyFormatMonthlyIncomeDown.text ="5000"
+        }
+        homeViewModel.text2.observe(viewLifecycleOwner){newCurrencyFormat->
+            if(newCurrencyFormat=="A"){
+                currencyFormatDaily.text = "5k"
+                currencyFormatMonthly.text = "10k"
+                currencyFormatDailyIncomeUp.text ="2k"
+                currencyFormatDailyIncomeDown.text ="2k"
+                currencyFormatMonthlyIncomeUp.text ="5k"
+                currencyFormatMonthlyIncomeDown.text ="5k"
+            }
+            if(newCurrencyFormat=="N"){
+                currencyFormatDaily.text = "5000"
+                currencyFormatMonthly.text = "10000"
+                currencyFormatDailyIncomeUp.text ="2000"
+                currencyFormatDailyIncomeDown.text ="2000"
+                currencyFormatMonthlyIncomeUp.text ="5000"
+                currencyFormatMonthlyIncomeDown.text ="5000"
+            }
         }
 
         val fabButton: FloatingActionButton = binding.fab

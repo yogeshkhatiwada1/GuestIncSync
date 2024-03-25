@@ -166,6 +166,12 @@ class MainActivity : AppCompatActivity() {
         val currency = editTextMyCurrency.text.toString()
         val homeViewModel: HomeViewModel by viewModels()
         homeViewModel.setCurrencyDataFromDialog(currency)
+        if(currencyFormat=="Numeric/Alphabetical Format"){
+            homeViewModel.setCurrencyFormatFromDialog("A")
+        }
+        else{
+            homeViewModel.setCurrencyFormatFromDialog("N")
+        }
 
         dialog.dismiss()
     }

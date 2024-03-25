@@ -81,7 +81,7 @@
                     android:textColor="#2C2C2C" />
 
                 <TextView
-                    android:id="@+id/textViewTodayIncome"
+                    android:id="@+id/textViewDailyIncome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="9"
