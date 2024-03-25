@@ -172,7 +172,7 @@ class MainActivity : AppCompatActivity() {
         else{
             homeViewModel.setCurrencyFormatFromDialog("N")
         }
-
+        homeViewModel.setDateFormat(dateFormat)
         dialog.dismiss()
     }
 
@@ -267,7 +267,7 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.closeDrawer(GravityCompat.START)
     }
     fun logout(item: MenuItem){
-       showLogoutDialog()
+        showLogoutDialog()
     }
 
     override fun onSupportNavigateUp(): Boolean {

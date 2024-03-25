@@ -6,15 +6,19 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
-    private val _text = MutableLiveData<String>()
-    private val _text2 = MutableLiveData<String>()
-
+    private val _currencyData = MutableLiveData<String>()
+    private val _currencyFormat = MutableLiveData<String>()
+    private val _dateFormat = MutableLiveData<String>()
     fun setCurrencyDataFromDialog(data: String) {
-        _text.value = data
+        _currencyData.value = data
     }
     fun setCurrencyFormatFromDialog(data: String) {
-        _text2.value = data
+        _currencyFormat.value = data
     }
-    val text: LiveData<String> get() = _text
-    val text2: LiveData<String> get() = _text2
+    fun setDateFormat(data: String){
+        _dateFormat.value=data
+    }
+    val currencyData: LiveData<String> get() = _currencyData
+    val currencyFormat: LiveData<String> get() = _currencyFormat
+    val dateFormat: LiveData<String> get() = _dateFormat
 }

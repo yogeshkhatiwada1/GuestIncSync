@@ -3,6 +3,7 @@ package com.example.guestincsync.ui.home
 import BookedRoomAdapter
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -13,15 +14,17 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.guestincsync.R
 import com.example.guestincsync.databinding.FragmentHomeBinding
+import com.example.guestincsync.nepalidate.ConverterUtil
 import com.example.guestincsync.ui.adapter.AvailableRoomAdapter
 import com.example.guestincsync.ui.dataModelClass.BookedRoom
 import com.example.guestincsync.ui.dataModelClass.Room
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class HomeFragment : Fragment() {
 
@@ -45,7 +48,7 @@ class HomeFragment : Fragment() {
         val myCurrency = sharedPreferences.getString("MyCurrency", "Rs.") ?: ""
         currencyDaily.text=myCurrency
         currencyMonthly.text=myCurrency
-        homeViewModel.text.observe(viewLifecycleOwner){newCurrency->
+        homeViewModel.currencyData.observe(viewLifecycleOwner){newCurrency->
             currencyDaily.text = newCurrency
             currencyMonthly.text = newCurrency
         }
@@ -72,7 +75,7 @@ class HomeFragment : Fragment() {
             currencyFormatMonthlyIncomeUp.text ="5000"
             currencyFormatMonthlyIncomeDown.text ="5000"
         }
-        homeViewModel.text2.observe(viewLifecycleOwner){newCurrencyFormat->
+        homeViewModel.currencyFormat.observe(viewLifecycleOwner){newCurrencyFormat->
             if(newCurrencyFormat=="A"){
                 currencyFormatDaily.text = "5k"
                 currencyFormatMonthly.text = "10k"
@@ -90,7 +93,40 @@ class HomeFragment : Fragment() {
                 currencyFormatMonthlyIncomeDown.text ="5000"
             }
         }
+        val dateFormat = sharedPreferences.getString("DateFormat", "AD") ?: ""
+        val date: TextView = binding.textViewDate
+        if(dateFormat=="AD") {
+            date.text = adDate()
+        }
+        else{
+                val currentDate = Calendar.getInstance().time
+                // Define the desired date format
+                val dateFormat = SimpleDateFormat("dd MM yyyy", Locale.ENGLISH)
+                // Format the date
+                val formattedDate = dateFormat.format(currentDate)
+                val dateNepali = ConverterUtil.convertADDatetoBS(formattedDate)
 
+                val dayFormat = SimpleDateFormat("EEE", Locale.ENGLISH)
+                val day = dayFormat.format(currentDate)
+                date.text = "$day, $dateNepali"
+        }
+        homeViewModel.dateFormat.observe(viewLifecycleOwner){newDate->
+            if(newDate=="AD") {
+                date.text = adDate()
+            }
+            else{
+                val currentDate = Calendar.getInstance().time
+                // Define the desired date format
+                val dateFormat = SimpleDateFormat("dd MM yyyy", Locale.ENGLISH)
+                // Format the date
+                val formattedDate = dateFormat.format(currentDate)
+                val dateNepali = ConverterUtil.convertADDatetoBS(formattedDate)
+
+                val dayFormat = SimpleDateFormat("EEE", Locale.ENGLISH)
+                val day = dayFormat.format(currentDate)
+                date.text = "$day, $dateNepali"
+            }
+        }
         val fabButton: FloatingActionButton = binding.fab
         fabButton.setOnClickListener { view ->
             val popUpMenu = layoutInflater.inflate(com.example.guestincsync.R.layout.fab_menu, null)
@@ -111,7 +147,7 @@ class HomeFragment : Fragment() {
             val statusBarHeight = getStatusBarHeight()
 
             // Calculate x and y coordinates to position the PopupWindow above the FloatingActionButton
-            val xOff = location[0] + view.width - popupWindow.width -480// Align to the right
+            val xOff = location[0] + view.width - popupWindow.width -460// Align to the right
             val yOff = location[1] - popupWindow.height - statusBarHeight - 760 // 760dp margin from the bottom
 
             // Show the PopupWindow at the specified location
@@ -248,5 +284,13 @@ class HomeFragment : Fragment() {
 
         return bookedRoomList
     }
-
+    private fun adDate():String{
+        // Get the current date
+        val currentDate = Calendar.getInstance().time
+        // Define the desired date format
+        val dateFormat = SimpleDateFormat("EEE, dd MMMM yyyy", Locale.ENGLISH)
+        // Format the date
+        val formattedDate = dateFormat.format(currentDate)
+        return formattedDate
+    }
 }

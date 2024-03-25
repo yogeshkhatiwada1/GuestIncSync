@@ -193,12 +193,13 @@
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_width="108dp"
+                android:layout_height="38dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:backgroundTint="#131313"
-                android:text="Check Out" />
+                android:text="Check Out"
+                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -374,12 +375,13 @@
 
                 <Button
                     android:id="@+id/button4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_width="108dp"
+                    android:layout_height="38dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:backgroundTint="#131313"
                     android:text="Check Out"
+                    android:textSize="12sp"
                     android:visibility="gone" />
 
                 <ImageView
